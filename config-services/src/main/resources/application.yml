@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          default-label: main
+          uri: https://github.com/george1002jlbb/demo-microservices.git
+          searchPaths: config-data
+          username: george1002jlbb
+          password: Sqweasdzxc1234$
+    security:
+      user:
+        name: root
+        password: s3cr3t
