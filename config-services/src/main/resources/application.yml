@@ -14,7 +14,7 @@ spring:
           searchPaths: config-data
           username: george1002jlbb
           password: Sqweasdzxc1234$
-    security:
-      user:
-        name: user
-        password: s3cr3t
+  security:
+    user:
+      name: user
+      password: s3cr3t
