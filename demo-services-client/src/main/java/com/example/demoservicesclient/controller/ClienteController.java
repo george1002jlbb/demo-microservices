@@ -2,7 +2,7 @@ package com.example.demoservicesclient.controller;
 
 import com.example.demoservicesclient.exception.ErrorMessage;
 import com.example.demoservicesclient.model.Cliente;
-import com.example.demoservicesclient.service.ClienteService;
+import com.example.demoservicesclient.repository.service.ClienteService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;

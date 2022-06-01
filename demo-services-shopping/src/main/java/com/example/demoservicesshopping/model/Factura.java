@@ -1,5 +1,6 @@
 package com.example.demoservicesshopping.model;
 
+import com.example.demoservicesshopping.modelrest.Cliente;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,6 +35,8 @@ public class Factura {
     @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
     private List<FacturaItem> items;
     private String status;
+    @Transient
+    private Cliente cliente;
 
     public Factura() {
         items = new ArrayList<>();

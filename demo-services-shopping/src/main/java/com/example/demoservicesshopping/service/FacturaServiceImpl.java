@@ -1,12 +1,18 @@
 package com.example.demoservicesshopping.service;
 
+import com.example.demoservicesshopping.client.ClienteClient;
+import com.example.demoservicesshopping.client.ProductoClient;
 import com.example.demoservicesshopping.model.Factura;
+import com.example.demoservicesshopping.model.FacturaItem;
+import com.example.demoservicesshopping.modelrest.Cliente;
+import com.example.demoservicesshopping.modelrest.Producto;
 import com.example.demoservicesshopping.repository.FacturaItemRepository;
 import com.example.demoservicesshopping.repository.FacturaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class FacturaServiceImpl implements FacturaService{
@@ -16,6 +22,12 @@ public class FacturaServiceImpl implements FacturaService{
 
     @Autowired
     private FacturaItemRepository facturaItemRepository;
+
+    @Autowired
+    private ClienteClient clienteClient;
+
+    @Autowired
+    private ProductoClient productoClient;
 
     @Override
     public List<Factura> list() {
@@ -29,7 +41,11 @@ public class FacturaServiceImpl implements FacturaService{
             return facturac;
         }
         factura.setStatus("A");
-        return facturaRepository.save(factura);
+        facturac = facturaRepository.save(factura);
+        facturac.getItems().forEach( facturaItem ->{
+            productoClient.updateStockProducto( facturaItem.getIdproducto(), facturaItem.getCantidad() * -1 );
+        });
+        return facturac;
     }
 
     @Override
@@ -58,6 +74,17 @@ public class FacturaServiceImpl implements FacturaService{
 
     @Override
     public Factura get(Long id) {
-        return facturaRepository.findById(id).orElse(null);
+        Factura factura = facturaRepository.findById(id).orElse(null);
+        if(factura != null){
+            Cliente cliente = clienteClient.getCliente( factura.getIdcliente() ).getBody();
+            factura.setCliente(cliente);
+            List<FacturaItem> listItems = factura.getItems().stream().map( facturaItem -> {
+                Producto producto = productoClient.getProducto(facturaItem.getIdproducto()).getBody();
+                facturaItem.setProducto(producto);
+                return facturaItem;
+            }).collect(Collectors.toList());
+            factura.setItems(listItems);
+        }
+        return factura;
     }
 }

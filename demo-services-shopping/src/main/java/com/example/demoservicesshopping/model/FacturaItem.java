@@ -1,5 +1,6 @@
 package com.example.demoservicesshopping.model;
 
+import com.example.demoservicesshopping.modelrest.Producto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +24,8 @@ public class FacturaItem {
     private Long idproducto;
     @Transient
     private Double subtotal; // no va hacer registrado en nuestra base de datos
+    @Transient
+    private Producto producto;
 
     public Double getSubTotal(){
         if (this.precio >0  && this.cantidad >0 ){

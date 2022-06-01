@@ -1,10 +1,9 @@
-package com.example.demoservicesclient.service;
+package com.example.demoservicesclient.repository.service;
 
 import com.example.demoservicesclient.model.Cliente;
 import com.example.demoservicesclient.model.Region;
 import com.example.demoservicesclient.repository.ClienteRepository;
 import com.example.demoservicesclient.repository.RegionRepository;
-import com.example.demoservicesclient.service.ClienteService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

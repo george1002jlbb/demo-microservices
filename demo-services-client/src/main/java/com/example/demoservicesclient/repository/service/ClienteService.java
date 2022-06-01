@@ -1,4 +1,4 @@
-package com.example.demoservicesclient.service;
+package com.example.demoservicesclient.repository.service;
 
 import com.example.demoservicesclient.model.Cliente;
 import com.example.demoservicesclient.model.Region;
