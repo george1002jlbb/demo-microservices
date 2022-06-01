@@ -5,7 +5,7 @@ spring:
     config:
       uri: http://localhost:8081
       username: user
-      password: a0f99f76-014a-4459-8abc-c3e7e431e6dc
+      password: s3cr3t
   boot:
     admin:
       client:
