@@ -12,8 +12,8 @@ spring:
           default-label: main
           uri: https://github.com/george1002jlbb/demo-microservices.git
           searchPaths: config-data
-          username: george1002jlbb
-          password: Sqweasdzxc1234$
+          username: ${GIT_USERNAME}
+          password: ${GIT_PASSWORD}
   security:
     user:
       name: user
