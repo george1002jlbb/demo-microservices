@@ -6,8 +6,8 @@ import com.example.demoservicesshopping.model.Factura;
 import com.example.demoservicesshopping.model.FacturaItem;
 import com.example.demoservicesshopping.modelrest.Cliente;
 import com.example.demoservicesshopping.modelrest.Producto;
-import com.example.demoservicesshopping.repository.FacturaItemRepository;
-import com.example.demoservicesshopping.repository.FacturaRepository;
+import com.example.demoservicesshopping.service.repository.FacturaItemRepository;
+import com.example.demoservicesshopping.service.repository.FacturaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

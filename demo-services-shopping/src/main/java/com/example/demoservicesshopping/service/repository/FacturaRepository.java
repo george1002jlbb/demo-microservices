@@ -1,4 +1,4 @@
-package com.example.demoservicesshopping.repository;
+package com.example.demoservicesshopping.service.repository;
 
 import com.example.demoservicesshopping.model.Factura;
 import org.springframework.data.jpa.repository.JpaRepository;
