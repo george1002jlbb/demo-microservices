@@ -16,5 +16,5 @@ spring:
           password: Sqweasdzxc1234$
     security:
       user:
-        name: root
+        name: user
         password: s3cr3t
