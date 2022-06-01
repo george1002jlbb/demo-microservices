@@ -23,6 +23,7 @@ public class Factura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "nro_Factura")
     private String nroFactura;
     private Long idcliente;
     private String descripcion;
@@ -31,7 +32,7 @@ public class Factura {
     private Date createAt;
     @Valid
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "iditem")
+    @JoinColumn(name = "idfactura")
     @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
     private List<FacturaItem> items;
     private String status;

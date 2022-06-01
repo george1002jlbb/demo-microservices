@@ -22,7 +22,6 @@ public class FacturaServiceImpl implements FacturaService{
 
     @Autowired
     private FacturaItemRepository facturaItemRepository;
-
     @Autowired
     private ClienteClient clienteClient;
 
