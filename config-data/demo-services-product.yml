@@ -47,6 +47,8 @@ Feign:
     dashboard:
       proxy-stream-allow-list: "*"
     enabled: true
+  ribbon:
+    enabled: true
 management:
   endpoints:
     web:
