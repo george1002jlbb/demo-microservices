@@ -2,7 +2,9 @@ package com.example.demoservicesshopping.client;
 
 import com.example.demoservicesshopping.modelrest.Cliente;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ClienteHystrixFallbackFactory implements ClienteClient{
     @Override
     public ResponseEntity<Cliente> getCliente(Long idCliente) {
