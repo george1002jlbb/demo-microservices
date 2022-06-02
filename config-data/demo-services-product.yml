@@ -46,9 +46,7 @@ Feign:
   hystrix:
     dashboard:
       proxy-stream-allow-list: "*"
-    enabled: true
-  ribbon:
-    enabled: true
+  enabled: true
 management:
   endpoints:
     web:
